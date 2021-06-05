@@ -10,14 +10,14 @@ HARD_ATTEMPT = 5
 def check(answer , guess ,turns):
     """Check answer compare to guess and return remaining turns"""
 
-    if guess>answer:
-        print(f"{guess} is too high compared to guess number.")
+    if guess<answer:
+        print(f"{answer} is too high compared to guess number.")
         return turns -1
-    elif answer>guess:
-        print(f"{guess} is too low compared to guess number.")
+    elif guess>answer:
+        print(f"{answer} is too low compared to guess number.")
         return turns -1
     else:
-        print(f"You got it ! the answer was {guess} .")
+        print(f"You got it ! the answer was {answer} .")
 
 #function to ask the difficulties
 
@@ -27,7 +27,7 @@ def difficuly():
         return EASY_ATTEMPT
     elif level=='hard':
         return HARD_ATTEMPT
-    else :
+    else:
         print("Invalid Input !")
         return 0
 
@@ -41,7 +41,7 @@ def play_game():
     #pick the number between 1 to 100
 
     answer = randint(1,100)
-    print(f"Actual number is {answer}")
+    print(f"Computer guess number is {answer}")
 
     turns = difficuly()
     guess =0
@@ -58,8 +58,6 @@ def play_game():
             return
         elif guess !=answer :
             print("Guess once again. ")
-
-
 
 
 
