@@ -1,16 +1,51 @@
-# This is a sample Python script.
+# display welcome msg to the user
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from random import randint
+from art import  logo
+
+EASY_ATTEMPT = 5
+HARD_ATTEMPT = 10
+
+#function to ask the difficulties
+
+def difficuly():
+    level = input("Choose the difficulty level: Type 'Easy' or 'Hard' ").lower()
+    if level == 'easy':
+        print(f"You have {EASY_ATTEMPT} attempts. ")
+        turns = EASY_ATTEMPT
+    elif level=='hard':
+        print(f"You have {HARD_ATTEMPT} attempts. ")
+        turns = HARD_ATTEMPT
+    else :
+        print("Invalid Input !")
+        return 0
+
+#function to check user guess number with computer generated number
+
+def check(answer , guess):
+    if guess>answer:
+        print(f"{answer} is too high compared to guess number.")
+    elif answer>guess:
+        print(f"{answer} is too low compared to guess number.")
+    else:
+        print(f"You got it ! the answer was {answer} .")
+
+print(logo)
+
+print("Welcome to Guessing Game")
+print("Think a number between 1 to 100! ")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#select the number
+answer = randint(1,100)
+
+#store the guess number
+
+guess = int(input("What is your guess: "))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
+
